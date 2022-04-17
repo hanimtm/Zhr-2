@@ -29,7 +29,7 @@
             <field name="print_report_name">'VAT INVOICE - %s - %s' % (object.partner_id.name or '', object.name)
             </field>
             <field name="binding_model_id" ref="account.model_account_move"/>
-            <field name="paperformat_id" ref="saudi_vat_invoice_print.paperformat_vat"/>
+            <field name="paperformat_id" ref="zhr_saudi_vat_invoice_print.paperformat_vat"/>
             <field name="binding_type">report</field>
         </record>
 
@@ -49,7 +49,7 @@
                 </t>
             </t>
 
-            <t t-call="saudi_vat_invoice_print.external_layout_standard_vat">
+            <t t-call="zhr_saudi_vat_invoice_print.external_layout_standard_vat">
                 <t t-raw="0"/>
             </t>
 
@@ -203,13 +203,13 @@
 
         <template id="report_saudi_invoice_pdt">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="saudi_vat_invoice_print.report_saudi_invoice_print" t-lang="doc.partner_id.lang"/>
+                <t t-call="zhr_saudi_vat_invoice_print.report_saudi_invoice_print" t-lang="doc.partner_id.lang"/>
             </t>
         </template>
 
         <template id="report_saudi_invoice_print">
             <t t-call="web.html_container">
-                <t t-call="saudi_vat_invoice_print.external_layout_vat">
+                <t t-call="zhr_saudi_vat_invoice_print.external_layout_vat">
                     <div class="page" style="font-family: Times New Roman;font-size: 15px; !important">
                         <center>
                             <h3>

@@ -34,7 +34,7 @@
             <field name="print_report_name">'VAT INVOICE - %s - %s' % (object.partner_id.name or '', object.name)
             </field>
             <field name="binding_model_id" ref="account.model_account_move"/>
-            <field name="paperformat_id" ref="saudi_vat_invoice_print.paperformat_vat"/>
+            <field name="paperformat_id" ref="zhr_saudi_vat_invoice_print.paperformat_vat"/>
             <field name="binding_type">report</field>
         </record>
 
@@ -54,7 +54,7 @@
                 </t>
             </t>
 
-            <t t-call="saudi_vat_invoice_print.external_layout_standard_vat">
+            <t t-call="zhr_saudi_vat_invoice_print.external_layout_standard_vat">
                 <t t-raw="0"/>
             </t>
 
@@ -192,7 +192,7 @@
                         </tbody>
                     </table>
                     <div class="text-center">
-                        <img src="/saudi_vat_invoice_print/static/src/images/footer.png" style="height: 125px;"/>
+                        <img src="/zhr_saudi_vat_invoice_print/static/src/images/footer.png" style="height: 125px;"/>
                     </div>
                 </div>
              </div>
@@ -201,13 +201,13 @@
 
         <template id="report_saudi_invoice_pdt">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="saudi_vat_invoice_print.report_saudi_invoice_print" t-lang="doc.partner_id.lang"/>
+                <t t-call="zhr_saudi_vat_invoice_print.report_saudi_invoice_print" t-lang="doc.partner_id.lang"/>
             </t>
         </template>
 
         <template id="report_saudi_invoice_print">
             <t t-call="web.html_container">
-                <t t-call="saudi_vat_invoice_print.external_layout_vat">
+                <t t-call="zhr_saudi_vat_invoice_print.external_layout_vat">
                     <div class="page" style="font-family: 'Cairo';font-size: 13px; !important">
                         <center>
                             <h3>
@@ -499,7 +499,7 @@
                                     </th>
                                 </tr>
                                 <t t-set="tax_totals" t-value="json.loads(doc.tax_totals_json)"/>
-                                <t t-call="saudi_vat_invoice_print.document_tax_totals"/>
+                                <t t-call="zhr_saudi_vat_invoice_print.document_tax_totals"/>
                             </tbody>
                         </table>
                         <table width="100%" style="border-spacing: 1em .5em;padding: 0 2em 1em 0;border: 1px solid black;">
@@ -613,7 +613,7 @@
                 </tr>
 
                 <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
-                <t t-call="saudi_vat_invoice_print.tax_groups_totals"/>
+                <t t-call="zhr_saudi_vat_invoice_print.tax_groups_totals"/>
             </t>
 
             <!--Total amount with all taxes-->
