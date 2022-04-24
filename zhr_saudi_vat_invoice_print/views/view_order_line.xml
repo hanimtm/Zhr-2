@@ -10,5 +10,18 @@
     <!-- This Menu Item Must have a parent -->
     <menuitem id="menu_item_order_line" name="order line" sequence="0"/>
     <menuitem id="menu_order_line" name="order line" sequence="0"
-    parent="menu_item_order_line" action="view_order_line_action"/>
+              parent="menu_item_order_line" action="view_order_line_action"/>
+
+
+    <record id="view_purchase_order_line_action" model="ir.actions.act_window">
+        <field name="name">view_purchase_order_line_action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">purchase.order.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="menu_purchase_order_line" name="Purchase order line"
+              parent="menu_item_order_line" action="view_purchase_order_line_action"/>
+
 </odoo>
