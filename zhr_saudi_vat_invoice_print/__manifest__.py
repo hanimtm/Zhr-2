@@ -2,7 +2,7 @@
 {
     'name': 'Saudi Invoice Format',
     'version': '1.0',
-    'depends': ['base', 'account'],
+    'depends': ['base', 'account', 'purchase'],
     'category': 'Accounting',
     'data': [
         'views/res_company.xml',
