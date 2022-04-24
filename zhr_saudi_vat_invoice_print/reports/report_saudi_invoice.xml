@@ -29,8 +29,8 @@
             <field name="name">Saudi Invoice Print</field>
             <field name="model">account.move</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">saudi_vat_invoice_print.report_saudi_invoice_pdt</field>
-            <field name="report_file">saudi_vat_invoice_print.report_saudi_invoice_pdt</field>
+            <field name="report_name">zhr_saudi_vat_invoice_print.report_saudi_invoice_pdt</field>
+            <field name="report_file">zhr_saudi_vat_invoice_print.report_saudi_invoice_pdt</field>
             <field name="print_report_name">'VAT INVOICE - %s - %s' % (object.partner_id.name or '', object.name)
             </field>
             <field name="binding_model_id" ref="account.model_account_move"/>
@@ -199,7 +199,7 @@
         </template>
 
 
-        <template id="report_saudi_invoice_pdt">
+        <template id="zhr_saudi_vat_invoice_print.report_saudi_invoice_pdt">
             <t t-foreach="docs" t-as="doc">
                 <t t-call="zhr_saudi_vat_invoice_print.report_saudi_invoice_print" t-lang="doc.partner_id.lang"/>
             </t>

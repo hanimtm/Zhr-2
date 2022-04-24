@@ -6,7 +6,7 @@
     'category': 'Accounting',
     'data': [
         'views/res_company.xml',
-        'views/invoice.xml',
+        'views/view_order_line.xml',
         'views/res_partner.xml',
         'reports/report_saudi_invoice.xml',
     ],
